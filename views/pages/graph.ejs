@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Tracker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" charset="utf-8">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<%- include("../partials/head"); %>
+</head>
+<body class="container">
+<main>
+		<!-- views/map-access-chart.ejs -->
+		<canvas id="myChart" width="300px%" height="300px"></canvas>
+		<div>
+
+		<script id ="map-popularity" type="text/javascript">
+			var ctx = document.getElementById("myChart").getContext("2d");
+			var myChart = new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: <%- JSON.stringify(date) %>,
+				datasets: [{
+					label: 'Grocery Spending',
+					data: <%- JSON.stringify(data) %>
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				}
+			}
+		});
+		</script>
+		</div>
+<footer>
+	<%- include("../partials/footer"); %>
+</footer>
+</main>
+<style>
+	body {
+		background-color: #fcfcd6;
+	}
+	main {
+		padding-top: 100px;
+	}
+	.submit {
+		padding-top: 40px;
+	}
+</style>
+</html>
+
