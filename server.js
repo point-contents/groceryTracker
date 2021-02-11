@@ -35,7 +35,7 @@ app.use("/transaction", transaction);
 app.use("/graph", graph);
 
 //Server Configs
-const PORT = 5123;
+const PORT = 8080;
 const hostname = "localhost";
 
 app.listen(PORT, () => {
