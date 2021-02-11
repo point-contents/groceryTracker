@@ -3,13 +3,17 @@ var mongoose = require('mongoose');
 
 //Set up default mongoose connection
 var mongoDB = 'mongodb://127.0.0.1:27017';
-mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
+
+mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}).
+  catch(error=> handleError(error));
 
 //Get the default connection
 var db = mongoose.connection;
 
 //Bind connection to error event (to get notification of connection errors)
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.on('error', err => {
+  logError(err);
+});
 
 var Schema = mongoose.Schema;
 var grocerySchema = new Schema({

@@ -34,8 +34,6 @@ app.use("/", home);
 app.use("/transaction", transaction);
 app.use("/graph", graph);
 
-
-
 //Server Configs
 const PORT = 5123;
 const hostname = "localhost";
