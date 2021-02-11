@@ -10,11 +10,6 @@ mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}).
 //Get the default connection
 var db = mongoose.connection;
 
-//Bind connection to error event (to get notification of connection errors)
-db.on('error', err => {
-  logError(err);
-});
-
 var Schema = mongoose.Schema;
 var grocerySchema = new Schema({
   date: Date,
