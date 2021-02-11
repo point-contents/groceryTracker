@@ -2,7 +2,7 @@
 var mongoose = require('mongoose');
 
 //Set up default mongoose connection
-var mongoDB = 'mongodb+srv://asdf:2tzBxKnGx444ViN@tracker.spiyf.mongodb.net/groceryModel?retryWrites=true&w=majority';
+var mongoDB = 'mongodb+srv://dirtymofo:AFyqvf8m6kXaW8P@tracker.spiyf.mongodb.net/groceryModel?retryWrites=true&w=majority';
 
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}).
   catch(error => console.log(error));
