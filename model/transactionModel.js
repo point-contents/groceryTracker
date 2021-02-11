@@ -2,9 +2,8 @@
 var mongoose = require('mongoose');
 
 //Set up default mongoose connection
-var mongoDB = 'mongodb+srv://dirtymofo:AFyqvf8m6kXaW8P@tracker.spiyf.mongodb.net/groceryModel?retryWrites=true&w=majority';
 
-mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}).
+mongoose.connect(process.env.MODELURL, {useNewUrlParser: true, useUnifiedTopology: true}).
   catch(error => console.log(error));
 
 //Get the default connection
