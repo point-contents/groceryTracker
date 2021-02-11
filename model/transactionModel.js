@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var mongoDB = 'mongodb+srv://asdf:REZzpP28U7xhdHr@tracker.spiyf.mongodb.net/groceryModel?retryWrites=true&w=majority';
 
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}).
-  catch(error=> handleError(error));
+  catch(error => console.log(error));
 
 //Get the default connection
 var db = mongoose.connection;
