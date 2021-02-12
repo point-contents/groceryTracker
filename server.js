@@ -4,15 +4,28 @@ const express = require("express");
 const rateLimit = require("express-rate-limit");
 const bodyParser = require("body-parser");
 const path = require("path");
+const basicAuth = require("express-basic-auth");
 
+//instantiate the "server"
 const app = express();
 
+//for parsing the requests
 app.use(express.json());
 app.use(
   express.urlencoded({
     extended: true,
   })
 );
+
+//for super simple authentication
+app.use(basicAuth({
+  users: { 'ariki': 'excellentexcellent',
+           'joy': 'wonderfulwonderful'},
+  challenge: true
+}));
+
+
+
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
