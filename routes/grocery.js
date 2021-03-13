@@ -14,9 +14,9 @@ const router = express.Router();
 router.get("/", getValidate, (req, res) => {
   const errors = validationResult(req);
   if (errors.isEmpty()) {
-    res.render("pages/old-index.ejs").status(200);
+    res.render("pages/old-index.ejs");
   } else {
-    res.send("Bad request").res.status(404);
+    res.send("Bad request");
     console.log(errors);
   }
 });
@@ -44,7 +44,7 @@ router.post("/", postValidate, (req, res) => {
     console.log("Failed Validator");
     console.log(req.body);
     console.log(errors);
-    res.send("Bad Request").status(404);
+    res.send("Bad Request");
   }
 });
 

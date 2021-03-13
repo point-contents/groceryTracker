@@ -13,9 +13,9 @@ const router = express.Router();
 router.get("/", getValidate, (req, res) => {
   const errors = validationResult(req);
   if (errors.isEmpty()) {
-    res.render("pages/old-index.ejs").status(200);
+    res.render("pages/old-index.ejs");
   } else {
-    res.status(400).send("It didnt work");
+    res.send("It didnt work");
   }
 });
 
