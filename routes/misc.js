@@ -13,7 +13,7 @@ const router = express.Router();
 router.get("/", getValidate, (req, res) => {
   const errors = validationResult(req);
   if (errors.isEmpty()) {
-    res.render("pages/old-index.ejs");
+    res.render("pages/misc-index.ejs");
   } else {
     res.send("It didnt work");
   }
@@ -30,7 +30,7 @@ router.post("/", postValidate, (req, res) => {
         {
           date: Date.now(),
           amount: req.body.value,
-          transactionType: "yes",
+          transactionType: "Misc Spending",
         },
       ]);
     } catch (err) {

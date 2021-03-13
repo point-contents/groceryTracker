@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Tracker</title>
+<title>Misc Tracker</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" charset="utf-8">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
 <%- include("../partials/head"); %>
@@ -13,15 +13,15 @@
 <main>
 	<div class="d-flex justify-content-center align-items-center container ">
 		<div class="row">
-			<form action="/work" method="POST">
+			<form action="/misc" method="POST">
 				<div class="form-row">
 					<div class="col-auto">
 						<select name = "item" required>
-							<option value = "Work Lunches"> Work Lunches </option>
+							<option value = "Misc Spending"> Misc Spending</option>
 						</select>
 					</div>
 						<div class="col-auto">
-							<input type = "number" name = "value" max = "50" min = "1" placeholder="Amount" required autofocus/>
+							<input type = "number" name = "value" max = "100" min = "1" placeholder="Amount" required autofocus/>
 						</div>
 					</div>
 					<div class="submit">
@@ -33,7 +33,7 @@
 			</form>
 		</div>
 	</div>
-		<form action="/workGraph">
+		<form action="/miscGraph">
 			<div class="col-auto">
 			<input type=submit value="Graph Past Transactions"/>
 			</div>
