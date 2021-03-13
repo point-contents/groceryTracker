@@ -16,13 +16,12 @@ router.get("/", getValidate,
     const errors = validationResult(req);
     if(errors.isEmpty())
     {
-      res.status(200).send("you have made it to the main transaction get page");
-      console.log("you have made it to the main transaction get page");
+      res.status(200).render("pages/old-index.ejs");
     }
     else
     {
-      res.status(404).send("there was an error");
-      console.log("there was an error");
+      res.status(404).send("Bad request");
+      console.log(errors);
     }
 });
 
