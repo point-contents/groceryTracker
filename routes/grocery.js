@@ -33,7 +33,8 @@ router.post("/", postValidate,
       {
         console.log("Passed Validator");
         console.log(req.body);
-        groceryModel.insertMany(
+        try {
+          async groceryModel.insertMany(
         [
         {
           date: Date.now(),
@@ -41,6 +42,11 @@ router.post("/", postValidate,
           transactionType: req.body.item
         }
         ]);
+        }
+        catch (err) {
+          console.log("Error inserting into DB");
+          console.err(err);
+        };
         res.redirect("/");
       }
       else
