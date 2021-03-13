@@ -15,12 +15,12 @@ var grocerySchema = new Schema({
   amount: {
     type: Number,
     min: [0, 'Too Few'],
-    max: [50, 'Too Much'],
+    max: [200, 'Too Much'],
     required: [true, "Must have a value"]
   },
   transactionType: {
     type: String,
-    enum: ['Work Spending']
+    enum: ['Grocery Spending']
   }
 });
 
