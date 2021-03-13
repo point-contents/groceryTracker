@@ -34,7 +34,7 @@ router.post("/work", postValidate, (req, res) => {
         {
           date: Date.now(),
           amount: req.body.value,
-          transactionType: req.body.item,
+          transactionType: "Work Lunches" 
         },
       ]);
     } catch (err) {
