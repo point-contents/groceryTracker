@@ -10,7 +10,7 @@ mongoose.connect(process.env.MODELURL, {useNewUrlParser: true, useUnifiedTopolog
 var db = mongoose.connection;
 
 var Schema = mongoose.Schema;
-var grocerySchema = new Schema({
+var miscSchema = new Schema({
   date: Date,
   amount: {
     type: Number,
@@ -20,9 +20,9 @@ var grocerySchema = new Schema({
   },
   transactionType: {
     type: String,
-    enum: ['Work Spending']
+    enum: ['Misc Spending']
   }
 });
 
-module.exports = mongoose.model('groceryModel', grocerySchema);
+module.exports = mongoose.model('miscSchema', miscSchema);
 

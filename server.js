@@ -24,9 +24,6 @@ app.use(basicAuth({
   challenge: true
 }));
 
-
-
-
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 30,
@@ -40,12 +37,23 @@ app.use(express.static("public"));
 
 //ROUTES
 var home = require("./routes/home");
-var transaction = require("./routes/transaction");
-var graph = require("./routes/graph");
+var grocery = require("./routes/grocery");
+var work = require("./routes/workTransaction");
+var misc = require("./routes/misc");
+
+//routes with chart.js
+var groceryGraph = require("./routes/graph");
+var miscGraph = require("./routes/graph");
+var workGraph = require("./routes/graph");
 
 app.use("/", home);
-app.use("/transaction", transaction);
-app.use("/graph", graph);
+app.use("/grocery", grocery);
+app.use("/work", work);
+app.use("/misc", misc);
+
+app.use("/grocerygraph", groceryGraph);
+app.use("/workgraph", workGraph);
+app.use("/miscgraph", miscGraph);
 
 //Server Configs
 const PORT = 8080;
