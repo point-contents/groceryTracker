@@ -34,7 +34,7 @@ router.post("/", postValidate,
         console.log("Passed Validator");
         console.log(req.body);
         try {
-          async groceryModel.insertMany(
+          groceryModel.insertMany(
         [
         {
           date: Date.now(),

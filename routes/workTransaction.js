@@ -36,7 +36,7 @@ router.post("/work", postValidate,
         console.log("Passed Validator");
         console.log(req.body);
         try {
-        await workTransaction.insertMany([
+        workTransaction.insertMany([
         {
           date: Date.now(),
           amount: req.body.value,

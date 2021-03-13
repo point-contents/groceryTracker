@@ -26,15 +26,14 @@ router.post("/", postValidate, (req, res) => {
     console.log("Passed Validator");
     console.log(req.body);
     try {
-      await miscTransaction.insertMany([
-      {
-        date: Date.now(),
-        amount: req.body.value,
-        transactionType: req.body.item,
-      }
-    ]);
-    }
-    catch (err) {
+      miscTransaction.insertMany([
+        {
+          date: Date.now(),
+          amount: req.body.value,
+          transactionType: req.body.item,
+        },
+      ]);
+    } catch (err) {
       console.log("Error inserting into DB");
       console.err(err);
     }
