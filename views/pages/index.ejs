@@ -1,58 +1,89 @@
 <html>
 <head>
-<title>Tracker</title>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" charset="utf-8">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
-<%- include("../partials/head"); %>
+<title></title>
 </head>
-<body class="container">
-<header>
-	<%- include("../partials/header"); %>
-</header>
+<div class="navigatox">
+	<a href="/grocery" class="myButton">Grocery</a>
+	<a href="/work" class="myButton">Lunches</a>
+	<a href="/general" class="myButton">Misc</a>
+</div>
+<body>
 
-<main>
-	<div class="d-flex justify-content-center align-items-center container ">
-		<div class="row">
-			<form action="/transaction" method="POST">
-				<div class="form-row">
-					<div class="col-auto">
-						<select name = "item" required>
-							<option value = "Groceries"> Groceries </option>
-							<option value = "Farmers Market"> Farmers Market</option>
-						</select>
-					</div>
-						<div class="col-auto">
-							<input type = "number" name = "value" max = "200" min = "1" placeholder="Amount" required autofocus/>
-						</div>
-					</div>
-					<div class="submit">
-						<div class="col text-center">
-							<button type="submit" class="btn btn-primary mb-2">Submit</button>
-						</div>
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
-		<form action="/graph">
-			<div class="col-auto">
-			<input type=submit value="Graph past transactions"/>
-			</div>
-		</form>
-<footer>
-	<%- include("../partials/footer"); %>
-</footer>
-</main>
+</body>
 <style>
-	body {
-		background-image: url("organicDesaturated.jpeg"); 
+body {
+	background-color: #FCFCD6;
+}
+
+.navigatox {
+	display: flex;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+	column-gap: 10px;
+}
+
+@media (min-width: 501px) /* Mobile */ {
+	.myButton {
+		box-shadow: 0px 18px 14px -7px #153c42;
+		background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+		background-color:#599bb3;
+		border-radius:8px;
+		display:inline-block;
+		cursor:pointer;
+		color:#ffffff;
+		font-family:Arial;
+		font-size:20px;
+		font-weight:bold;
+		padding:24px 43px;
+		text-decoration:none;
+		text-shadow:0px 1px 0px #3d768a;
+		max-width: 25%;
 	}
-	main {
-		padding-top: 100px;
+
+	.myButton:hover {
+		background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+		background-color:#408c99;
 	}
-	.submit {
-		padding-top: 40px;
+
+	.myButton:active {
+		position:relative;
+		top:1px;
 	}
+}
+
+@media (max-width: 500px) /* Mobile */ {
+	.myButton {
+		box-shadow: 0px 18px 14px -7px #153c42;
+		background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+		background-color:#599bb3;
+		border-radius:8px;
+		display:inline-block;
+		cursor:pointer;
+		color:#ffffff;
+		font-family:Arial;
+		font-size:14px;
+		font-weight:bold;
+		padding:16px 22px;
+		text-decoration:none;
+		text-shadow:0px 1px 0px #3d768a;
+	}
+
+	.myButton:hover {
+		background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+		background-color:#408c99;
+	}
+
+	.myButton:active {
+		position:relative;
+		top:1px;
+	}
+}
+
+<!-- refer to this for learning -->
+<!-- https://www.sitepoint.com/media-queries-width-vs-device-width/ -->
+
 </style>
 </html>
-
