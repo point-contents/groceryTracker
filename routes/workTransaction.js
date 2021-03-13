@@ -23,7 +23,7 @@ router.get("/", getValidate, (req, res) => {
   }
 });
 
-router.post("/work", postValidate, (req, res) => {
+router.post("/", postValidate, (req, res) => {
   console.log("Post attempt made");
   const errors = validationResult(req);
   if (errors.isEmpty()) {

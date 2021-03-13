@@ -30,7 +30,7 @@ router.post("/", postValidate, (req, res) => {
         {
           date: Date.now(),
           amount: req.body.value,
-          transactionType: req.body.item,
+          transactionType: "yes",
         },
       ]);
     } catch (err) {
