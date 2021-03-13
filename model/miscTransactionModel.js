@@ -10,19 +10,19 @@ mongoose.connect(process.env.MODELURL, {useNewUrlParser: true, useUnifiedTopolog
 var db = mongoose.connection;
 
 var Schema = mongoose.Schema;
-var grocerySchema = new Schema({
+var miscSchema = new Schema({
   date: Date,
   amount: {
     type: Number,
     min: [0, 'Too Few'],
-    max: [200, 'Too Much'],
+    max: [50, 'Too Much'],
     required: [true, "Must have a value"]
   },
   transactionType: {
     type: String,
-    enum: ['Groceries', 'Farmers Market']
+    enum: ['Misc Spending']
   }
 });
 
-module.exports = mongoose.model('groceryModel', grocerySchema);
+module.exports = mongoose.model('miscSchema', miscSchema);
 

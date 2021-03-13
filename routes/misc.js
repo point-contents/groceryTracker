@@ -1,4 +1,4 @@
-// endpoint to post transactions 
+// endpoint to post misc transactions 
 
 const express = require("express");
 const router = express.Router();
@@ -7,7 +7,22 @@ const path = require('path');
 const { check, body, validationResult } = require("express-validator");
 
 var postValidate = require("../utils/postValidate");
-var groceryModel = require("../model/transactionModel");
+var getValidate = require("../utils/getValidate");
+var miscTransaction = require("../model/miscTransactionModel");
+
+router.get("/", getValidate,
+    (req, res) => {
+    const errors = validationResult(req);
+    if(errors.isEmpty())
+    {
+      res.status(200).send("It worked");
+    }
+    else
+    {
+      res.status(400).send("It didnt work");
+    }
+})
+      
 
 router.post("/", postValidate,
     (req, res) => {
@@ -17,7 +32,7 @@ router.post("/", postValidate,
       {
         console.log("Passed Validator");
         console.log(req.body);
-        groceryModel.insertMany(
+        workTransaction.insertMany(
         [
         {
           date: Date.now(),
