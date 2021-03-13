@@ -15,7 +15,7 @@ router.get("/", getValidate, (req, res) => {
   console.log("Request to home");
   const errors = validationResult(req);
   if (errors.isEmpty()) {
-    res.render("pages/old-index.ejs").status(200);
+    res.render("pages/work-transaction-index.ejs").status(200);
   } else {
     console.log("Bad get request");
     console.log(errors);

@@ -51,9 +51,9 @@ app.use("/grocery", grocery);
 app.use("/work", work);
 app.use("/misc", misc);
 
-app.use("/grocerygraph", groceryGraph);
-app.use("/workgraph", workGraph);
-app.use("/miscgraph", miscGraph);
+app.use("/groceryGraph", groceryGraph);
+app.use("/workGraph", workGraph);
+app.use("/miscGraph", miscGraph);
 
 //Server Configs
 const PORT = 8080;
