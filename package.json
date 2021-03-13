@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "pm2 start server.js"
   },
   "author": "me",
   "license": "GPL-3.0-or-later",
@@ -16,6 +16,7 @@
     "express-basic-auth": "^1.2.0",
     "express-rate-limit": "^5.2.3",
     "express-validator": "^6.9.2",
-    "mongoose": "^5.11.13"
+    "mongoose": "^5.11.13",
+    "pm2": "^4.5.5"
   }
 }
