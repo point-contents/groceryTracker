@@ -20,9 +20,9 @@
 			<input type="submit" value="Graph Past Transactions"/>
 		</form>
 	</div>
+	<!-- TODO put all this into a stlesheet -->
 </main>
 <style>
-
 	body {
 		background-color: #FCFCD6;
 	}
@@ -37,10 +37,9 @@
 
 	@media (min-width: 501px) {
 	input[type=number] {
-		border-radius:8px;
-		font-family:Arial;
-		font-size:16px;
-		font-weight:bold;
+		border-radius: 8px;
+		font-family: serif;
+		font-size: 24px;
 		}
 	}
 
@@ -71,33 +70,40 @@
 		top:1px;
 	}
 }
-
-@media (max-width: 500px) /* Mobile */ {
-	#myButton {
-		box-shadow: 0px 18px 14px -7px #153c42;
-		background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-		background-color:#599bb3;
-		border-radius:8px;
-		display:inline-block;
-		cursor:pointer;
-		color:#ffffff;
-		font-family:Arial;
-		font-size:14px;
-		font-weight:bold;
-		padding:16px 22px;
-		text-decoration:none;
-		text-shadow:0px 1px 0px #3d768a;
+	@media (max-width: 501px) {
+	input[type=number] {
+		border-radius: 8px;
+		font-family: serif;
+		font-size: 16px;
+		}
 	}
 
-	#myButton:hover {
-		background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-		background-color:#408c99;
-	}
+	@media (max-width: 500px) /* Mobile */ {
+		#myButton {
+			box-shadow: 0px 18px 14px -7px #153c42;
+			background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+			background-color:#599bb3;
+			border-radius:8px;
+			display:inline-block;
+			cursor:pointer;
+			color:#ffffff;
+			font-family:Arial;
+			font-size:14px;
+			font-weight:bold;
+			padding:16px 22px;
+			text-decoration:none;
+			text-shadow:0px 1px 0px #3d768a;
+		}
 
-	#myButton:active {
-		position:relative;
-		top:1px;
-	}
+		#myButton:hover {
+			background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+			background-color:#408c99;
+		}
+
+		#myButton:active {
+			position:relative;
+			top:1px;
+		}
 }
 </style>
 </html>
