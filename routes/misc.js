@@ -37,7 +37,7 @@ router.post("/", postValidate, (req, res) => {
       console.log("Error inserting into DB");
       console.err(err);
     }
-    res.redirect("/");
+    res.redirect("/misc");
   } else {
     console.log("Failed Validator");
     console.log(req.body);
