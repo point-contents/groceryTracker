@@ -7,38 +7,42 @@
 
 <main>
 	<div class="inputArea">
-		<div class="row">
 			<form action="/work" method="POST">
-				<div class="form-row">
-						<div class="col-auto">
-							<input type = "number" name = "value" max = "50" min = "1" placeholder="Amount" required autofocus/>
-						</div>
-				</div>
+				<input type = "number" id="formAmountValue" name = "value" max = "50" min = "1" placeholder="Amount" required autofocus/>
 				<button type="submit" id="myButton" name="myButton">Submit</button>
-				</div>
 			</form>
 		</div>
 	</div>
+	<div class="grapher">
 		<form action="/workGraph">
-			<div class="col-auto">
-			<input type=submit value="Graph Past Transactions"/>
-			</div>
+			<input type="submit" value="Graph Past Transactions"/>
 		</form>
+	</div>
 </main>
 <style>
 
 	body {
-		background-color: #fgfgfg;
-	}
-	main {
-		padding-top: 100px;
-	}
-	.inputArea {
-		display: flex
-		justify-content: center
-		align-items: center 
+		background-color: #FCFCD6;
 	}
 
+	.inputArea {
+		display: flex;
+		height: 100vh;
+		align-items: center;
+		justify-content: center;
+
+	}
+
+	@media (min-width: 501px) {
+	input[type=number] {
+		border-radius:8px;
+		font-family:Arial;
+		font-size:16px;
+		font-weight:bold;
+		}
+	}
+
+	@media (min-width: 501px) /* Mobile */ {
 	#myButton {
 		box-shadow: 0px 18px 14px -7px #153c42;
 		background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
@@ -48,7 +52,7 @@
 		cursor:pointer;
 		color:#ffffff;
 		font-family:Arial;
-		font-size:20px;
+		font-size:16px;
 		font-weight:bold;
 		padding:24px 43px;
 		text-decoration:none;
@@ -65,7 +69,35 @@
 		position:relative;
 		top:1px;
 	}
+}
 
+@media (max-width: 500px) /* Mobile */ {
+	#myButton {
+		box-shadow: 0px 18px 14px -7px #153c42;
+		background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+		background-color:#599bb3;
+		border-radius:8px;
+		display:inline-block;
+		cursor:pointer;
+		color:#ffffff;
+		font-family:Arial;
+		font-size:14px;
+		font-weight:bold;
+		padding:16px 22px;
+		text-decoration:none;
+		text-shadow:0px 1px 0px #3d768a;
+	}
+
+	#myButton:hover {
+		background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+		background-color:#408c99;
+	}
+
+	#myButton:active {
+		position:relative;
+		top:1px;
+	}
+}
 </style>
 </html>
 
