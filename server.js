@@ -39,14 +39,14 @@ app.set("trust proxy", 1);
 
 //ROUTES
 var home = require("./routes/home");
-var grocery = require("./routes/grocery");
-var work = require("./routes/workTransaction");
-var misc = require("./routes/misc");
+var grocery = require("./routes/grocery/grocery");
+var work = require("./routes/work/workTransaction");
+var misc = require("./routes/misc/misc");
 
 //routes with chart.js
-var groceryGraph = require("./routes/graph");
-var miscGraph = require("./routes/graph");
-var workGraph = require("./routes/graph");
+var groceryGraph = require("./routes/grocery/groceryGraph");
+var miscGraph = require("./routes/misc/miscGraph");
+var workGraph = require("./routes/work/workGraph");
 
 app.use("/", home);
 app.use("/grocery", grocery);

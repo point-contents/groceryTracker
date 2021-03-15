@@ -4,7 +4,7 @@ const { check, body, validationResult } = require("express-validator");
 var getValidate = require("../utils/getValidate");
 
 //DATABASE MODEL
-var workModel = require('../model/workTransactionModel');
+var groceryModel = require('../model/groceryTransactionModel');
 
 router.get("/", getValidate, (req, res) => {
   const errors = validationResult(req);
@@ -16,11 +16,13 @@ router.get("/", getValidate, (req, res) => {
       transactionType: false
     };
 
-    workModel.find({}, transactionList, (err, data) => 
+    groceryModel.find({}, transactionList, (err, data) => 
     {
       if(err) 
       {
           res.send("error");
+          console.log("Error searching database");
+          console.log(err);
       }
       else 
       {
@@ -30,7 +32,7 @@ router.get("/", getValidate, (req, res) => {
         spendingDataDate.push(element.date.toDateString());
         spendingDataAmount.push(element.amount);
       });
-      res.render("pages/graph.ejs", {
+        res.render("pages/groceryGraph.ejs", {
         date: spendingDataDate,
         data: spendingDataAmount})
         }

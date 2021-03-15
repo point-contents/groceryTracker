@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Tracker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" charset="utf-8">
+</head>
+<body class="container">
+	<div class="inputArea">
+		<form action="/misc" method="POST">
+			<input type = "number" id="formAmountValue" name = "value" max = "50" min = "1" placeholder="Amount" required autofocus/>
+				<div class="submitter">
+					<button type="submit" id="myButton">Submit</button>
+				</div>
+			</form>
+	</div>
+	<div class="grapher">
+		<form action="/workGraph">
+			<input type="submit" value="Graph Past Transactions"/>
+		</form>
+	</div>
+<link href="style.css" rel="stylesheet" type="text/css">
+</main>
+</html>
+
