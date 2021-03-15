@@ -4,11 +4,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" charset="utf-8">
 <title></title>
 </head>
-<div class="navigatox">
-	<%- include("../partials/header.ejs"); %>
-	<a href="/grocery" class="myButton">Grocery</a>
-	<a href="/work" class="myButton">Lunches</a>
-	<a href="/misc" class="myButton">Misc</a>
+<div id="navigatox">
+	<div id="links">
+		<%- include("../partials/header.ejs"); %>
+		<a href="/grocery" class="myButton">Grocery</a>
+		<a href="/work" class="myButton">Lunches</a>
+		<a href="/misc" class="myButton">Misc</a>
+	</div>
 </div>
 <body>
 
@@ -16,6 +18,12 @@
 <style>
 body {
 	background-color: #FCFCD6;
+}
+
+h2 {
+	display: grid;
+	justify-self: left;
+	align-self: left;
 }
 
 #navigatox {
