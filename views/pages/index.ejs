@@ -4,8 +4,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" charset="utf-8">
 <title></title>
 </head>
-<%- include("../partials/header.ejs"); %>
 <div class="navigatox">
+	<%- include("../partials/header.ejs"); %>
 	<a href="/grocery" class="myButton">Grocery</a>
 	<a href="/work" class="myButton">Lunches</a>
 	<a href="/misc" class="myButton">Misc</a>
@@ -18,12 +18,13 @@ body {
 	background-color: #FCFCD6;
 }
 
-.navigatox {
-	display: flex;
-	height: 100vh;
-	align-items: center;
-	justify-content: center;
-	column-gap: 10px;
+#navigatox {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 7fr;
+  grid-gap: 1rem;
+  justify-items: center;
+  align-items: center;
 }
 
 @media (min-width: 501px) /* Mobile */ {
@@ -83,7 +84,7 @@ body {
 	}
 }
 
-<!-- refer to this for learning -->
+<!-- refer to this for learning responsiveness -->
 <!-- https://www.sitepoint.com/media-queries-width-vs-device-width/ -->
 
 </style>
