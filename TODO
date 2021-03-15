@@ -1,0 +1,13 @@
+fix sizes of charts, and then maybe add some more charts,
+ie week to date, month to date, year to date etc.
+
+add a favicon so that there is no error in the inspector
+
+add ascesibility stuff.
+
+add tests
+
+figure out if its a good idea to have CSS separate / is there a way to make
+it load quicker
+
+
