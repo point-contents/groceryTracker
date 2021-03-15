@@ -4,7 +4,7 @@ const express = require("express");
 const rateLimit = require("express-rate-limit");
 const bodyParser = require("body-parser");
 const path = require("path");
-const auth = require("express-openid-connect");
+const { auth } = require("express-openid-connect");
 const authConfig = require("./utils/authConfig");
 
 //instantiate the "server"
