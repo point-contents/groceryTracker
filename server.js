@@ -9,6 +9,11 @@ const basicAuth = require("express-basic-auth");
 //instantiate the "server"
 const app = express();
 
+//to render templates apparently having it up higher
+//can make it faster serving public files.
+app.use(express.static("public"));
+app.set("view-engine", "ejs");
+
 //for parsing the requests
 app.use(express.json());
 app.use(
@@ -31,9 +36,6 @@ const limiter = rateLimit({
 app.use(limiter);
 app.set("trust proxy", 1);
 
-//to render templates
-app.set("view-engine", "ejs");
-app.use(express.static("public"));
 
 //ROUTES
 var home = require("./routes/home");
