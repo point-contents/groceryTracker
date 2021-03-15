@@ -32,7 +32,7 @@ router.get("/", getValidate, (req, res) => {
         spendingDataDate.push(element.date.toDateString());
         spendingDataAmount.push(element.amount);
       });
-        res.render("pages/groceryGraph.ejs", {
+        res.render("pages/grocery/groceryGraph.ejs", {
         date: spendingDataDate,
         data: spendingDataAmount})
         }
