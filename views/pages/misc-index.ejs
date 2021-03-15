@@ -1,57 +1,23 @@
 <html>
 <head>
-<title>Misc Tracker</title>
+<title>Tracker</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" charset="utf-8">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
-<%- include("../partials/head"); %>
 </head>
 <body class="container">
-<header>
-	<%- include("../partials/header"); %>
-</header>
-
-<main>
-	<div class="d-flex justify-content-center align-items-center container ">
-		<div class="row">
-			<form action="/misc" method="POST">
-				<div class="form-row">
-					<div class="col-auto">
-						<select name = "item" required>
-							<option value = "Misc Spending"> Misc Spending</option>
-						</select>
-					</div>
-						<div class="col-auto">
-							<input type = "number" name = "value" max = "100" min = "1" placeholder="Amount" required autofocus/>
-						</div>
-					</div>
-					<div class="submit">
-						<div class="col text-center">
-							<button type="submit" class="btn btn-primary mb-2">Submit</button>
-						</div>
-					</div>
+	<div class="inputArea">
+		<form action="/misc" method="POST">
+			<input type = "number" id="formAmountValue" name = "value" max = "50" min = "1" placeholder="Amount" required autofocus/>
+				<div class="submitter">
+					<button type="submit" id="myButton">Submit</button>
 				</div>
 			</form>
-		</div>
 	</div>
-		<form action="/miscGraph">
-			<div class="col-auto">
-			<input type=submit value="Graph Past Transactions"/>
-			</div>
+	<div class="grapher">
+		<form action="/workGraph">
+			<input type="submit" value="Graph Past Transactions"/>
 		</form>
-<footer>
-	<%- include("../partials/footer"); %>
-</footer>
+	</div>
+<link href="style.css" rel="stylesheet" type="text/css">
 </main>
-<style>
-	body {
-		background-color: #fgfgfg;
-	}
-	main {
-		padding-top: 100px;
-	}
-	.submit {
-		padding-top: 40px;
-	}
-</style>
 </html>
 
