@@ -4,7 +4,8 @@ const express = require("express");
 const rateLimit = require("express-rate-limit");
 const bodyParser = require("body-parser");
 const path = require("path");
-const basicAuth = require("express-basic-auth");
+const auth = require("express-openid-connect");
+const authConfig = require("./utils/authConfig");
 
 //instantiate the "server"
 const app = express();
@@ -22,13 +23,6 @@ app.use(
   })
 );
 
-//for super simple authentication
-app.use(basicAuth({
-  users: { 'ariki': 'excellentexcellent',
-           'joy': 'wonderfulwonderful'},
-  challenge: true
-}));
-
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 30,
@@ -36,6 +30,8 @@ const limiter = rateLimit({
 app.use(limiter);
 app.set("trust proxy", 1);
 
+//Auth config provided by Auth0
+app.use(auth(authConfig));
 
 //ROUTES
 var home = require("./routes/home");
@@ -48,7 +44,11 @@ var groceryGraph = require("./routes/grocery/groceryGraph");
 var miscGraph = require("./routes/misc/miscGraph");
 var workGraph = require("./routes/work/workGraph");
 
-app.use("/", home);
+app.get("/", (req, res) => {
+  res.send(req.oidc.isAuthenticated() ? 'logged in': 'logged out');
+});
+
+app.use("/home", home);
 app.use("/grocery", grocery);
 app.use("/work", work);
 app.use("/misc", misc);
