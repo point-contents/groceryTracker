@@ -14,7 +14,7 @@ const router = express.Router();
 router.get("/", getValidate, (req, res) => {
   const errors = validationResult(req);
   if (errors.isEmpty()) {
-    res.render("pages/old-index.ejs");
+    res.render("pages/grocery/grocery-index.ejs");
   } else {
     res.send("Bad request");
     console.log(errors);
