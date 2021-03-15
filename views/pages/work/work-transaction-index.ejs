@@ -3,7 +3,7 @@
 <title>Tracker</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" charset="utf-8">
 </head>
-<body class="container">
+<body id="container">
 	<%- include("../../partials/header.ejs"); %>
 	<div class="inputArea">
 		<form action="/work" method="POST">
@@ -12,12 +12,14 @@
 		</form>
 	</div>
 </body>
-	<div class="grapher">
-		<form action="/workGraph">
-			<input type="submit" value="Graph Past Transactions"/>
-		</form>
-	</div>
-<link href="style.css" rel="stylesheet" type="text/css">
+<div class="grapher">
+	<form action="/workGraph">
+		<input type="submit" value="Graph Past Transactions"/>
+	</form>
+</div>
+<style>
+<%- include("../../../public/style.css"); %>
+</style>
 </main>
 </html>
 
