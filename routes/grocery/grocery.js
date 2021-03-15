@@ -5,9 +5,9 @@ const bodyParser = require("body-parser");
 const path = require("path");
 //does this need to be here??
 const { check, body, validationResult } = require("express-validator");
-var getValidate = require("../utils/getValidate");
-var postValidate = require("../utils/postValidate");
-var groceryModel = require("../model/groceryTransactionModel");
+var getValidate = require("../../utils/getValidate");
+var postValidate = require("../../utils/postValidate");
+var groceryModel = require("../../model/groceryTransactionModel");
 
 const router = express.Router();
 

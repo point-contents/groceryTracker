@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const { check, body, validationResult } = require("express-validator");
-var getValidate = require("../utils/getValidate");
+var getValidate = require("../../utils/getValidate");
 
 //DATABASE MODEL
-var groceryModel = require('../model/groceryTransactionModel');
+var groceryModel = require('../../model/groceryTransactionModel');
 
 router.get("/", getValidate, (req, res) => {
   const errors = validationResult(req);

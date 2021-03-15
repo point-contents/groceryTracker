@@ -3,9 +3,9 @@
 const express = require("express");
 const path = require("path");
 const { check, body, validationResult } = require("express-validator");
-var postValidate = require("../utils/postValidate");
-var getValidate = require("../utils/getValidate");
-var miscTransaction = require("../model/miscTransactionModel");
+var postValidate = require("../../utils/postValidate");
+var getValidate = require("../../utils/getValidate");
+var miscTransaction = require("../../model/miscTransactionModel");
 
 const router = express.Router();
 // ROUTES

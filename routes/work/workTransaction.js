@@ -6,9 +6,9 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const { check, body, validationResult } = require("express-validator");
 
-var getValidate = require("../utils/getValidate");
-var postValidate = require("../utils/postValidate");
-var workTransaction = require("../model/workTransactionModel");
+var getValidate = require("../../utils/getValidate");
+var postValidate = require("../../utils/postValidate");
+var workTransaction = require("../../model/workTransactionModel");
 
 //ROUTES
 router.get("/", getValidate, (req, res) => {
