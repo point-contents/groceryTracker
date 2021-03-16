@@ -1,4 +1,4 @@
-// endpoint to post transactions made during work
+/// endpoint to post transactions made during work
 
 const express = require("express");
 const router = express.Router();
@@ -35,7 +35,7 @@ router.post("/", postValidate, requiresAuth(), (req, res) => {
         {
           date: Date.now(),
           amount: req.body.value,
-          transactionType: "Work Lunches" 
+          transactionType: "Work Lunches",
         },
       ]);
     } catch (err) {
