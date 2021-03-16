@@ -10,7 +10,7 @@ var postValidate = require("../../utils/postValidate");
 var groceryModel = require("../../model/groceryTransactionModel");
 
 //auth0 middleware
-const { requiresAuth } = require("express-openid-connect");
+const { auth, requiresAuth } = require("express-openid-connect");
 
 const router = express.Router();
 

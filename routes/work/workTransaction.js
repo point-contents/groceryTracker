@@ -5,7 +5,7 @@ const router = express.Router();
 const bodyParser = require("body-parser");
 const path = require("path");
 const { check, body, validationResult } = require("express-validator");
-const { requiresAuth } = require("express-openid-connect");
+const { auth, requiresAuth } = require("express-openid-connect");
 
 var getValidate = require("../../utils/getValidate");
 var postValidate = require("../../utils/postValidate");

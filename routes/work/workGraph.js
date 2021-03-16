@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { check, body, validationResult } = require("express-validator");
-const { authRequired } = require("express-openid-connect");
+const { auth, authRequired } = require("express-openid-connect");
 var getValidate = require("../../utils/getValidate");
 
 //DATABASE MODEL

@@ -51,15 +51,15 @@ app.get("/callback", (req, res) => {
   res.render("home");
 })
 
-app.get("/", (req, res) => {
-  res.render("./views/pages/index.ejs");
-});
 
 //for serving the logo to various providors
 app.get("/logo", (req, res) => {
   res.sendFile(__dirname + "/public/logo.png");
 });
 
+app.get("/", (req, res) => {
+  res.render("./views/pages/landingPage.ejs");
+});
 
 app.use("/home", home);
 app.use("/grocery", grocery);
