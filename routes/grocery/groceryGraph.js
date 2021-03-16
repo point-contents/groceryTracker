@@ -1,7 +1,8 @@
 const express = require("express");
 const path = require("path");
 const { check, body, validationResult } = require("express-validator");
-const { auth, authRequired } = require("express-openid-connect");
+const { auth, requiresAuth } = require("express-openid-connect");
+const 
 
 var getValidate = require("../../utils/getValidate");
 
@@ -10,7 +11,7 @@ var groceryModel = require('../../model/groceryTransactionModel');
 
 const router = express.Router();
 
-router.get("/", getValidate, authRequired(), (req, res) => {
+router.get("/", getValidate, requiresAuth(), (req, res) => {
   const errors = validationResult(req);
   if(errors.isEmpty()) 
   {
