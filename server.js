@@ -57,7 +57,8 @@ app.get("/logo", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.render("pages/landingPage.ejs");
+  req.oidc.isAuthenticated ? res.render("pages/landingPage.ejs"):
+    res.redirect("/home");
 });
 
 //need to make a route for all of these assets
@@ -76,6 +77,7 @@ app.use("/misc", misc);
 app.use("/groceryGraph", groceryGraph);
 app.use("/workGraph", workGraph);
 app.use("/miscGraph", miscGraph);
+
 const PORT = 8080;
 const hostname = "localhost";
 
