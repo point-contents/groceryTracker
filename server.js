@@ -48,9 +48,8 @@ var workGraph = require("./routes/work/workGraph");
 //obviously they will need to go later.
 
 app.get("/callback", (req, res) => {
-  res.render("home");
+  res.redirect("/home");
 })
-
 
 //for serving the logo to various providors
 app.get("/logo", (req, res) => {
