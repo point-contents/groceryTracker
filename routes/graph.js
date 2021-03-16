@@ -1,12 +1,14 @@
 const express = require("express");
-const router = express.Router();
 const { check, body, validationResult } = require("express-validator");
+const { authRequired } = require("express-openid-connect");
 var getValidate = require("../utils/getValidate");
 
 //DATABASE MODEL
 var groceryModel = require('../model/groceryTransactionModel');
 
-router.get("/", getValidate, (req, res) => {
+const router = express.Router();
+
+router.get("/", getValidate, authRequired(), (req, res) => {
   const errors = validationResult(req);
   if(errors.isEmpty()) 
   {

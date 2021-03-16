@@ -10,7 +10,6 @@ var getValidate = require("../../utils/getValidate");
 var miscTransaction = require("../../model/miscTransactionModel");
 
 
-
 const router = express.Router();
 // ROUTES
 
