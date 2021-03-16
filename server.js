@@ -44,13 +44,17 @@ var groceryGraph = require("./routes/grocery/groceryGraph");
 var miscGraph = require("./routes/misc/miscGraph");
 var workGraph = require("./routes/work/workGraph");
 
-app.get("/", (req, res) => {
-  res.send(req.oidc.isAuthenticated() ? 'logged in': 'logged out');
-});
+//FIX, this is just here to get the auth working,
+//obviously they will need to go later.
 
 app.get("/callback", (req, res) => {
-  res.redirect("/");
+  res.redirect("/home");
 })
+
+//for serving the logo to various providors
+app.get("/logo", (req, res) => {
+  res.sendFile("logo.png");
+});
 
 app.use("/home", home);
 app.use("/grocery", grocery);
