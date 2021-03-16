@@ -2,7 +2,6 @@ const express = require("express");
 const path = require("path");
 const { check, body, validationResult } = require("express-validator");
 const { auth, requiresAuth } = require("express-openid-connect");
-const 
 
 var getValidate = require("../../utils/getValidate");
 
