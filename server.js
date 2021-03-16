@@ -4,7 +4,7 @@ const express = require("express");
 const rateLimit = require("express-rate-limit");
 const bodyParser = require("body-parser");
 const path = require("path");
-const { auth } = require("express-openid-connect");
+const { auth, requiresAuth } = require("express-openid-connect");
 const authConfig = require("./utils/authConfig");
 
 //instantiate the "server"
@@ -48,17 +48,18 @@ var workGraph = require("./routes/work/workGraph");
 //obviously they will need to go later.
 
 app.get("/callback", (req, res) => {
-  res.redirect("/home");
+  res.render("home");
 })
+
+app.get("/", (req, res) => {
+  res.render("./views/pages/index.ejs");
+});
 
 //for serving the logo to various providors
 app.get("/logo", (req, res) => {
   res.sendFile(__dirname + "/public/logo.png");
 });
 
-app.get("/", (req, res) => {
-  res.redirect("/home");
-});
 
 app.use("/home", home);
 app.use("/grocery", grocery);
