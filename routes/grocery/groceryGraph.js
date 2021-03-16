@@ -9,7 +9,7 @@ var groceryModel = require('../../model/groceryTransactionModel');
 
 const router = express.Router();
 
-router.get("/", getValidate, authRequired(), (req, res) => {
+router.get("/", getValidate, (req, res) => {
   const errors = validationResult(req);
   if(errors.isEmpty()) 
   {
