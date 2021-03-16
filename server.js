@@ -76,8 +76,6 @@ app.use("/misc", misc);
 app.use("/groceryGraph", groceryGraph);
 app.use("/workGraph", workGraph);
 app.use("/miscGraph", miscGraph);
-
-//Server Configs
 const PORT = 8080;
 const hostname = "localhost";
 
