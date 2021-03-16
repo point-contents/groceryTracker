@@ -57,8 +57,8 @@ app.get("/logo", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  req.oidc.isAuthenticated ? res.render("pages/landingPage.ejs"):
-    res.redirect("/home");
+  req.oidc.isAuthenticated ? res.redirect("/home"):
+    res.render("pages/landingPage.ejs");
 });
 
 //need to make a route for all of these assets
