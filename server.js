@@ -53,7 +53,7 @@ app.get("/callback", (req, res) => {
 
 //for serving the logo to various providors
 app.get("/logo", (req, res) => {
-  res.sendFile("logo.png");
+  res.sendFile("public/logo.png");
 });
 
 app.use("/home", home);
