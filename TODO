@@ -7,6 +7,8 @@ add ascesibility stuff.
 
 add tests
 
+add proper logging like morgan or something etc
+
 figure out if its a good idea to have CSS separate / is there a way to make
 it load quicker,
 
