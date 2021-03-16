@@ -58,7 +58,7 @@ app.get("/logo", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.render("./views/pages/landingPage.ejs");
+  res.render("pages/landingPage.ejs");
 });
 
 app.use("/home", home);
