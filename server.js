@@ -47,6 +47,11 @@ var workGraph = require("./routes/work/workGraph");
 //FIX, this is just here to get the auth working,
 //obviously they will need to go later.
 
+//need to make a route for all of these assets
+//ill write them here for now, and then push them out
+//to their own file later
+
+//auth0 callback url
 app.get("/callback", (req, res) => {
   res.redirect("/home");
 })
@@ -60,9 +65,6 @@ app.get("/", (req, res) => {
     res.render("pages/landingPage.ejs");
 });
 
-//need to make a route for all of these assets
-//ill write them here for now, and then push them out
-//to their own file later
 
 app.get("/assets/fontawesome", (req, res) => {
   res.sendFile(__dirname + "/public/landingPage/assets/css/fontawesome-all.min.css");
