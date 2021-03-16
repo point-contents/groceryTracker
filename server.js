@@ -48,6 +48,10 @@ app.get("/", (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'logged in': 'logged out');
 });
 
+app.get("/callback", (req, res) => {
+  res.redirect("/");
+})
+
 app.use("/home", home);
 app.use("/grocery", grocery);
 app.use("/work", work);
