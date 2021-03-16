@@ -1,7 +1,7 @@
 const express = require("express");
 const { check, body, validationResult } = require("express-validator");
 const { auth, authRequired } = require("express-openid-connect");
-var getValidate = require("../../utils/getValidate");
+//var getValidate = require("../../utils/getValidate");
 
 //DATABASE MODEL
 var miscModel = require('../../model/miscTransactionModel');
