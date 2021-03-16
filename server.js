@@ -61,8 +61,39 @@ app.get("/", (req, res) => {
   res.render("pages/landingPage.ejs");
 });
 
-app.get("/fontawesome", (req, res) => {
+//need to make a route for all of these assets
+//ill write them here for now, and then push them out
+//to their own file later
+
+app.get("/assets/fontawesome", (req, res) => {
   res.sendFile(__dirname + "/public/landingPage/assets/css/fontawesome-all.min.css");
+});
+
+app.get("/assets/webfonts/fa-regular-400.woff", (req, res) => {
+  res.sendFile(__dirname + "/public/landingPage/assets/webfonts/fa-regular-400.woff");
+});
+
+app.get("/assets/webfonts/fa-solid-900", (req, res) => {
+  res.sendFile(__dirname + "/public/landingPage/assets/webfonts/fa-solid-900");
+});
+
+app.get("/assets/webfonts/fa-solid-900.eot", (req, res) => {
+  res.sendFile(__dirname + "/public/landingPage/assets/webfonts/fa-solid-900.eot");
+});
+
+app.get("/assets/webfonts/fa-solid-900.woff2", (req, res) => {
+  res.sendFile(__dirname + "/public/landingPage/assets/webfonts/fa-solid-900.woff2");
+});
+
+app.get("/assets/webfonts/fa-solid-900.woff", (req, res) => {
+  res.sendFile(__dirname + "/public/landingPage/assets/webfonts/fa-solid-900.woff");
+});
+
+app.get("/assets/webfonts/fa-regular-400.ttf", (req, res) => {
+  res.sendFile(__dirname + "/public/landingPage/assets/webfonts/fa-solid-900.ttf");
+});
+app.get("/assets/webfonts/fa-solid-900.svg", (req, res) => {
+  res.sendFile(__dirname + "/public/landingPage/assets/webfonts/fa-solid-900.svg");
 });
 
 app.use("/home", home);
