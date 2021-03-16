@@ -57,7 +57,6 @@ app.get("/logo", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  req.oidc.isAuthenticated ? res.redirect("/home"):
     res.render("pages/landingPage.ejs");
 });
 
