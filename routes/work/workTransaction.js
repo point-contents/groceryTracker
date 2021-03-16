@@ -5,13 +5,14 @@ const router = express.Router();
 const bodyParser = require("body-parser");
 const path = require("path");
 const { check, body, validationResult } = require("express-validator");
+const { requiresAuth } = require("express-openid-connect");
 
 var getValidate = require("../../utils/getValidate");
 var postValidate = require("../../utils/postValidate");
 var workTransaction = require("../../model/workTransactionModel");
 
 //ROUTES
-router.get("/", getValidate, (req, res) => {
+router.get("/", getValidate, requiresAuth(), (req, res) => {
   console.log("Request to home");
   const errors = validationResult(req);
   if (errors.isEmpty()) {
@@ -23,7 +24,7 @@ router.get("/", getValidate, (req, res) => {
   }
 });
 
-router.post("/", postValidate, (req, res) => {
+router.post("/", postValidate, requiresAuth(), (req, res) => {
   console.log("Post attempt made");
   const errors = validationResult(req);
   if (errors.isEmpty()) {

@@ -3,14 +3,18 @@
 const express = require("express");
 const path = require("path");
 const { check, body, validationResult } = require("express-validator");
+const { requiresAuth } = require("express-openid-connect");
+
 var postValidate = require("../../utils/postValidate");
 var getValidate = require("../../utils/getValidate");
 var miscTransaction = require("../../model/miscTransactionModel");
 
+
+
 const router = express.Router();
 // ROUTES
 
-router.get("/", getValidate, (req, res) => {
+router.get("/", getValidate, requiresAuth(), (req, res) => {
   const errors = validationResult(req);
   if (errors.isEmpty()) {
     res.render("pages/misc/misc-index.ejs");
@@ -19,7 +23,7 @@ router.get("/", getValidate, (req, res) => {
   }
 });
 
-router.post("/", postValidate, (req, res) => {
+router.post("/", postValidate, requiresAuth(), (req, res) => {
   console.log("Post attempt made");
   const errors = validationResult(req);
   if (errors.isEmpty()) {

@@ -9,9 +9,12 @@ var getValidate = require("../../utils/getValidate");
 var postValidate = require("../../utils/postValidate");
 var groceryModel = require("../../model/groceryTransactionModel");
 
+//auth0 middleware
+const { requiresAuth } = require("express-openid-connect");
+
 const router = express.Router();
 
-router.get("/", getValidate, (req, res) => {
+router.get("/", getValidate, requiresAuth(), (req, res) => {
   const errors = validationResult(req);
   if (errors.isEmpty()) {
     res.render("pages/grocery/grocery-index.ejs");
@@ -21,7 +24,7 @@ router.get("/", getValidate, (req, res) => {
   }
 });
 
-router.post("/", postValidate, (req, res) => {
+router.post("/", postValidate, requiresAuth(), (req, res) => {
   console.log("Post attempt made");
   const errors = validationResult(req);
   if (errors.isEmpty()) {
