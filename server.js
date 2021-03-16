@@ -61,6 +61,10 @@ app.get("/", (req, res) => {
   res.render("pages/landingPage.ejs");
 });
 
+app.get("/fontawesome", (req, res) => {
+  res.sendFile(__dirname + "/public/landingPage/assets/css/fontawesome-all.min.css");
+});
+
 app.use("/home", home);
 app.use("/grocery", grocery);
 app.use("/work", work);
