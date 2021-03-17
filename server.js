@@ -1,4 +1,8 @@
 //          Dependencies
+//dotenv for dev, probs way better than waiting ages
+//for digital ocean to fail
+require("dotenv").config();
+
 // Express
 const express = require("express");
 const rateLimit = require("express-rate-limit");
@@ -9,6 +13,7 @@ const authConfig = require("./utils/authConfig");
 
 //instantiate the "server"
 const app = express();
+
 
 //to render templates apparently having it up higher
 //can make it faster serving public files.
