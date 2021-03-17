@@ -24,7 +24,9 @@ router.get("/", getValidate, requiresAuth(), (req, res) => {
   }
 });
 
-router.post("/", postValidate, requiresAuth(), (req, res) => {
+router.post("/", postValidate, requiresAuth(), async (req, res) => {
+  const userInfo = await req.oidc.fetchUserInfo();
+  console.log(JSON.stringify(userInfo));
   console.log("Post attempt made");
   const errors = validationResult(req);
   if (errors.isEmpty()) {

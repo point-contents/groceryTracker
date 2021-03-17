@@ -9,6 +9,9 @@ add tests
 
 add proper logging like morgan or something etc
 
+add await to the routes that need it, specifically the ones that are calling
+the database.
+
 figure out if its a good idea to have CSS separate / is there a way to make
 it load quicker,
 
