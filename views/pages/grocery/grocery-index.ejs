@@ -4,19 +4,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" charset="utf-8">
 </head>
 <body id="container">
-<%- include("../../partials/header.ejs"); %>
+	<%- include("../../partials/header.ejs"); %>
+	<div>
+		Logout / Home Button
+	</div>
 	<div class="inputArea">
 		<form action="/misc" method="POST">
 			<input type = "number" id="formAmountValue" name = "value" max = "50" min = "1" placeholder="Amount" required autofocus/>
 			<button type="submit" id="myButton">Submit</button>
 		</form>
 	</div>
+	<div class="grapher">
+		<form action="/groceryGraph">
+			<input type="submit" value="Graph"/>
+		</form>
+	</div>
 </body>
-<div class="grapher">
-	<form action="/groceryGraph">
-		<input type="submit" value="Graph"/>
-	</form>
-</div>
 <style>
 <%- include("../../../public/style.css"); %>
 </style>
