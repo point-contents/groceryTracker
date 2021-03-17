@@ -24,37 +24,31 @@ router.get("/", getValidate, requiresAuth(), (req, res) => {
   }
 });
 
-router.post("/", postValidate, requiresAuth(), async (req, res) => {
+router.post("/", postValidate, requiresAuth(), (req, res) => {
+  console.log(req.id);
   console.log("Post attempt made");
   const errors = validationResult(req);
-  try {
-    const userInfo = await req.oidc.fetchUserInfo();
-    console.log(userInfo.sub);
-    if (errors.isEmpty()) {
-      console.log("Passed Validator");
-      console.log(req.body);
-      try {
-        groceryModel.insertMany([
-          {
-            date: Date.now(),
-            amount: req.body.value,
-            transactionType: req.body.item,
-          },
-        ]);
-        res.redirect("/grocery");
-      } catch (err) {
-        console.log("Error inserting into DB");
-        console.err(err);
-        res.redirect("/grocery");
-      }
-    } else {
-      console.log("Failed Validator");
-      console.log(req.body);
-      console.log(errors);
-      res.send("Bad Request");
+  if (errors.isEmpty()) {
+    console.log("Passed Validator");
+    console.log(req.body);
+    try {
+      groceryModel.insertMany([
+        {
+          date: Date.now(),
+          amount: req.body.value,
+          transactionType: req.body.item,
+        },
+      ]);
+    } catch (err) {
+      console.log("Error inserting into DB");
+      console.err(err);
     }
-  } catch (err) {
-    console.log(err);
+    res.redirect("/grocery");
+  } else {
+    console.log("Failed Validator");
+    console.log(req.body);
+    console.log(errors);
+    res.send("Bad Request");
   }
 });
 
