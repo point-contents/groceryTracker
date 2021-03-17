@@ -70,6 +70,14 @@ app.get("/assets/fontawesome", (req, res) => {
   res.sendFile(__dirname + "/public/landingPage/assets/css/fontawesome-all.min.css");
 });
 
+app.get("/images/bg.png", (req, res) => {
+  res.sendFile(__dirname + "/public/landingPage/images/bg.jpeg");
+});
+
+app.get("/images/overlay.png", (req, res) => {
+  res.sendFile(__dirname + "/public/landingPage/images/overlay.png");
+});
+
 app.use("/home", home);
 app.use("/grocery", grocery);
 app.use("/work", work);
