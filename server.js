@@ -75,7 +75,7 @@ app.get("/public/landingPage/images/pic02.jpg", (req, res) => {
   res.sendFile(__dirname + "/public/landingPage/images/pic03.jpg");
 });
 
-app.get("/images/bg.jpeg", (req, res) => {
+app.get("/images/bg.jpg", (req, res) => {
   res.sendFile(__dirname + "/public/landingPage/images/bg.jpeg");
 });
 
