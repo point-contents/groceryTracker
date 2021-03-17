@@ -21,7 +21,9 @@ var grocerySchema = new Schema({
   transactionType: {
     type: String,
     enum: ['Grocery Spending']
-  }
+  },
+  userID: String
+
 });
 
 module.exports = mongoose.model('groceryModel', grocerySchema);
