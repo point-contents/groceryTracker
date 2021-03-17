@@ -25,8 +25,8 @@ router.get("/", getValidate, requiresAuth(), (req, res) => {
 });
 
 router.post("/", postValidate, requiresAuth(), async (req, res) => {
-//  const userInfo = await req.oidc.fetchUserInfo();
-  // console.log(userInfo.sub);
+  const userInfo = await req.oidc.fetchUserInfo();
+  console.log(userInfo.sub);
   console.log("Post attempt made");
   const errors = validationResult(req);
   if (errors.isEmpty()) {
@@ -40,11 +40,12 @@ router.post("/", postValidate, requiresAuth(), async (req, res) => {
           transactionType: req.body.item,
         },
       ]);
+      res.redirect("/grocery");
     } catch (err) {
       console.log("Error inserting into DB");
       console.err(err);
+      res.redirect("/grocery");
     }
-    res.redirect("/");
   } else {
     console.log("Failed Validator");
     console.log(req.body);
