@@ -14,14 +14,13 @@ router.get("/", getValidate, requiresAuth(), (req, res) => {
   const errors = validationResult(req);
   if(errors.isEmpty()) 
   {
-    var transactionList = {
+    var transactionList = { //pretty sure this object can be deleted
       _id: false,
       __v: false,
       transactionType: false
     };
-
-
-    miscModel.find({ userID: sub}, transactionList, (err, data) => 
+    const sub = req.oidc.sub;
+    miscModel.find({ userID: sub }, transactionList, (err, data) => 
     {
       if(err) 
       {

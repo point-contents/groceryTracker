@@ -30,13 +30,14 @@ router.post("/", postValidate, requiresAuth(), (req, res) => {
   if (errors.isEmpty()) {
     console.log("Passed Validator");
     console.log(req.body);
+    const sub = req.oidc.sub;
     try {
       workTransaction.insertMany([
         {
           date: Date.now(),
           amount: req.body.value,
           transactionType: "Work Lunches",
-          userID: req.oidc.sub
+          userID: sub 
         },
       ]);
     } catch (err) {
