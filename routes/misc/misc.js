@@ -34,6 +34,7 @@ router.post("/", postValidate, requiresAuth(), (req, res) => {
           date: Date.now(),
           amount: req.body.value,
           transactionType: "Misc Spending",
+          userID: req.oidc.sub
         },
       ]);
     } catch (err) {

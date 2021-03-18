@@ -20,7 +20,8 @@ var workTransactionModel = new Schema({
   transactionType: {
     type: String,
     enum: ['Work Lunches']
-  }
+  },
+  userID: String
 });
 
 module.exports = mongoose.model('workTransactionModel', workTransactionModel);

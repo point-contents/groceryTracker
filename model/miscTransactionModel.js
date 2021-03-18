@@ -21,7 +21,8 @@ var miscSchema = new Schema({
   transactionType: {
     type: String,
     enum: ['Misc Spending']
-  }
+  },
+  userID: String
 });
 
 module.exports = mongoose.model('miscSchema', miscSchema);

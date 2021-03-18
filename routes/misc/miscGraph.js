@@ -20,7 +20,8 @@ router.get("/", getValidate, requiresAuth(), (req, res) => {
       transactionType: false
     };
 
-    miscModel.find({}, transactionList, (err, data) => 
+
+    miscModel.find({ userID: sub}, transactionList, (err, data) => 
     {
       if(err) 
       {
