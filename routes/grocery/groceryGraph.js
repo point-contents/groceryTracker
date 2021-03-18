@@ -20,7 +20,8 @@ router.get("/", getValidate, requiresAuth(), (req, res) => {
       transactionType: false
     };
 
-    groceryModel.find({}, transactionList, (err, data) => 
+    const sub = req.oidc.user.sub;
+    groceryModel.find({ userID: sub }, transactionList, (err, data) => 
     {
       if(err) 
       {

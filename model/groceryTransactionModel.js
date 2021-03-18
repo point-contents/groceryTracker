@@ -2,7 +2,6 @@
 var mongoose = require('mongoose');
 
 //Set up default mongoose connection
-
 mongoose.connect(process.env.MODELURL, {useNewUrlParser: true, useUnifiedTopology: true}).
   catch(error => console.log(error));
 
@@ -23,7 +22,6 @@ var grocerySchema = new Schema({
     enum: ['Grocery Spending']
   },
   userID: String
-
 });
 
 module.exports = mongoose.model('groceryModel', grocerySchema);
