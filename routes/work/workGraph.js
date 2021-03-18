@@ -19,7 +19,7 @@ router.get("/", getValidate, requiresAuth(), (req, res) => {
       transactionType: false
     };
 
-    const sub = req.oidc.sub;
+    const sub = req.oidc.user.sub;
     workModel.find({ userID: sub }, transactionList, (err, data) => 
     {
       if(err) 
