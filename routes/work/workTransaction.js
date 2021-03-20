@@ -17,6 +17,16 @@ router.get("/", getValidate, requiresAuth(), (req, res) => {
   const errors = validationResult(req);
   if (errors.isEmpty()) {
     res.render("pages/work/work-transaction-index.ejs");
+    //JSON like structure are the values that area passed to the
+    //template, should be the same for all of the views that are
+    //for posting to the database.
+    res.render("pages/postView.ejs",
+      {
+        maxValue: 200,
+        minValue: 0,
+        formPostAction: "work",
+        graphPostAction: "workGraph"
+      });
   } else {
     console.log("Bad get request");
     console.log(errors);
@@ -36,7 +46,6 @@ router.post("/", postValidate, requiresAuth(), (req, res) => {
         {
           date: Date.now(),
           amount: req.body.value,
-          transactionType: "Work Lunches",
           userID: sub 
         },
       ]);

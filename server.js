@@ -14,7 +14,6 @@ const authConfig = require("./utils/authConfig");
 //instantiate the "server"
 const app = express();
 
-
 //to render templates apparently having it up higher
 //can make it faster serving public files.
 app.use(express.static("public"));

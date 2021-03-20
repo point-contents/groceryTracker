@@ -18,10 +18,6 @@ var miscSchema = new Schema({
     max: [50, 'Too Much'],
     required: [true, "Must have a value"]
   },
-  transactionType: {
-    type: String,
-    enum: ['Misc Spending']
-  },
   userID: String
 });
 

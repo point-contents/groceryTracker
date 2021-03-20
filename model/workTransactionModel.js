@@ -14,7 +14,7 @@ var workTransactionModel = new Schema({
   amount: {
     type: Number,
     min: [0, 'Too Few'],
-    max: [200, 'Too Much'],
+    max: [50, 'Too Much'],
     required: [true, "Must have a value"]
   },
   transactionType: {
