@@ -1,3 +1,4 @@
+# Front End
 fix sizes of charts, and then maybe add some more charts,
 ie week to date, month to date, year to date etc.
 
@@ -5,6 +6,7 @@ add a favicon so that there is no error in the inspector
 
 add ascesibility stuff.
 
+# Server End
 add tests
 
 add proper logging like morgan or something etc
@@ -19,10 +21,3 @@ it load quicker,
 	template, but then it is difficult to see what is going on in the browser
 	inspector.
 
-Make multiuser, this means what for the database stuff???
-
-	So to continue on with the multiuser idea, maybe we can get some of the information
-	from the auth0 user, and create an hashtable, where the we make a uuid of the users 
-	and then on the other side have a hash of their email that we got from auth0.
-	we can then use the uuid in the database as a field that we can later search by?
-	obvs wouldnt scale well, but I would like to at least get this working a bit better

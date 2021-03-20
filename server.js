@@ -96,9 +96,13 @@ app.get("/callback", (req, res) => {
 //ill write them here for now, and then push them out
 //to their own file later
 
-//for serving the logo to various providors
+//for serving the logo and favicon to various providers
 app.get("/logo", (req, res) => {
   res.sendFile(__dirname + "/public/logo.png");
+});
+
+app.get("/favicon.ico", (req, res) => {
+  res.sendFile(__dirname + "/public/favicon.ico");
 });
 
 //the following are things that the HTML5UP

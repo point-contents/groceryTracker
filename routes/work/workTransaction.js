@@ -13,7 +13,6 @@ var workTransaction = require("../../model/workTransactionModel");
 
 //ROUTES
 router.get("/", getValidate, requiresAuth(), (req, res) => {
-  console.log("Request to home");
   const errors = validationResult(req);
   if (errors.isEmpty()) {
     res.render("pages/work/work-transaction-index.ejs");
@@ -35,10 +34,8 @@ router.get("/", getValidate, requiresAuth(), (req, res) => {
 });
 
 router.post("/", postValidate, requiresAuth(), (req, res) => {
-  console.log("Post attempt made");
   const errors = validationResult(req);
   if (errors.isEmpty()) {
-    console.log("Passed Validator");
     console.log(req.body);
     const sub = req.oidc.user.sub;
     try {
@@ -50,14 +47,13 @@ router.post("/", postValidate, requiresAuth(), (req, res) => {
         },
       ]);
     } catch (err) {
-      console.log("Error inserting into DB");
-      console.err(err);
+      console.error("Error inserting into DB");
+      console.error(err);
     }
     res.redirect("/work");
   } else {
     console.log("Failed Validator");
-    console.log(req.body);
-    console.log(errors);
+    console.error(errors);
     res.send("Bad Request");
   }
 });
