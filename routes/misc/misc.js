@@ -9,8 +9,9 @@ var postValidate = require("../../utils/postValidate");
 var getValidate = require("../../utils/getValidate");
 var miscTransaction = require("../../model/miscTransactionModel");
 
-
+//instantiate router object
 const router = express.Router();
+
 // ROUTES
 
 router.get("/", getValidate, requiresAuth(), (req, res) => {
@@ -40,8 +41,6 @@ router.post("/", postValidate, requiresAuth(), (req, res) => {
   //in the insert statement?
   const sub = req.oidc.user.sub;
   if (errors.isEmpty()) {
-    console.log("Passed Validator");
-    console.log(req.body);
     try {
       miscTransaction.insertMany([
         {

@@ -36,7 +36,6 @@ router.get("/", getValidate, requiresAuth(), (req, res) => {
 });
 
 router.post("/", postValidate, requiresAuth(), (req, res) => {
-  console.log("Post attempt made");
   const errors = validationResult(req);
   const sub = req.oidc.user.sub;
   if (errors.isEmpty()) {
