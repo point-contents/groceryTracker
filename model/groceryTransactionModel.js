@@ -17,10 +17,6 @@ var grocerySchema = new Schema({
     max: [200, 'Too Much'],
     required: [true, "Must have a value"]
   },
-  transactionType: {
-    type: String,
-    enum: ['Grocery Spending']
-  },
   userID: String
 });
 
