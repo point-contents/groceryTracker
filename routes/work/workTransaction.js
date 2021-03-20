@@ -15,7 +15,6 @@ var workTransaction = require("../../model/workTransactionModel");
 router.get("/", getValidate, requiresAuth(), (req, res) => {
   const errors = validationResult(req);
   if (errors.isEmpty()) {
-    res.render("pages/work/work-transaction-index.ejs");
     //JSON like structure are the values that area passed to the
     //template, should be the same for all of the views that are
     //for posting to the database.
