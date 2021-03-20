@@ -94,6 +94,16 @@ app.get("/", (req, res) => {
     res.render("pages/landingPage.ejs");
 });
 
+app.get("/test", (req, res) => {
+    res.render("pages/postView.ejs",
+      {
+        maxValue: 50,
+        minValue: 0,
+        formPostAction: "work",
+        graphPostAction: "workGraph"
+      })
+});
+
 app.use("/home", home);
 app.use("/grocery", grocery);
 app.use("/work", work);
