@@ -6,47 +6,41 @@ const { auth, requiresAuth } = require("express-openid-connect");
 var getValidate = require("../../utils/getValidate");
 
 //DATABASE MODEL
-var groceryModel = require('../../model/groceryTransactionModel');
+var groceryModel = require("../../model/groceryTransactionModel");
 
 const router = express.Router();
 
 router.get("/", getValidate, requiresAuth(), (req, res) => {
   const errors = validationResult(req);
-  if(errors.isEmpty()) 
-  {
+  if (errors.isEmpty()) {
     var transactionList = {
       _id: false,
       __v: false,
-      transactionType: false
+      transactionType: false,
     };
 
     const sub = req.oidc.user.sub;
-    groceryModel.find({ userID: sub }, transactionList, (err, data) => 
-    {
-      if(err) 
-      {
-          res.send("error");
-          console.log("Error searching database");
-          console.log(err);
+    groceryModel.find({ userID: sub }, transactionList, (err, data) => {
+      if (err) {
+        console.error("Error searching database");
+        console.log(err);
+      } else {
+        let spendingDataDate = [];
+        let spendingDataAmount = [];
+        data.forEach((element) => {
+          spendingDataDate.push(element.date.toDateString());
+          spendingDataAmount.push(element.amount);
+        });
+        res.render("pages/graphView.ejs", {
+          date: spendingDataDate,
+          data: spendingDataAmount,
+          graphTitle: "Grocery",
+        });
       }
-      else 
-      {
-      let spendingDataDate = [];
-      let spendingDataAmount = [];
-      data.forEach((element) => {
-        spendingDataDate.push(element.date.toDateString());
-        spendingDataAmount.push(element.amount);
-      });
-        res.render("pages/grocery/groceryGraph.ejs", {
-        date: spendingDataDate,
-        data: spendingDataAmount})
-        }
-    })
-  }
-  else {
+    });
+  } else {
     res.send("bad request");
   }
 });
-
 
 module.exports = router;

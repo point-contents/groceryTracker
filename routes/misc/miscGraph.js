@@ -32,9 +32,10 @@ router.get("/", getValidate, requiresAuth(), (req, res) => {
           spendingDataDate.push(element.date.toDateString());
           spendingDataAmount.push(element.amount);
         });
-        res.render("pages/misc/miscGraph.ejs", {
+        res.render("pages/graphView.ejs", {
           date: spendingDataDate,
           data: spendingDataAmount,
+          graphTitle: "Misc Spending"
         });
       }
     });

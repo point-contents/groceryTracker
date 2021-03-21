@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Grocery Spending</title>
+	<title> <%- graphTitle %> </title>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" charset="utf-8">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 </head>
@@ -17,7 +17,7 @@
 			data: {
 				labels: <%- JSON.stringify(date) %>,
 				datasets: [{
-					label: 'Grocery Spending',
+					label: '<%- graphTitle %> ',
 					data: <%- JSON.stringify(data) %>
 				}]
 			},
