@@ -35,10 +35,10 @@ body {
 		display:inline-block;
 		cursor:pointer;
 		color:#ffffff;
-		font-family:Arial;
-		font-size:20px;
+		font-family:Libre Baskerville, serif;
+		font-size:35px;
 		font-weight:bold;
-		padding:24px 43px;
+		padding:4em;
 		text-decoration:none;
 		text-shadow:0px 1px 0px #3d768a;
 		max-width: 25%;
