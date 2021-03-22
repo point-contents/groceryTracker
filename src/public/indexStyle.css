@@ -1,5 +1,5 @@
 body {
-	background-color: #FCFCD6;
+	background-color: #D1D8EC; 
 }
 
 #navigatox {
@@ -28,24 +28,25 @@ body {
 
 @media (min-width: 501px) /* Mobile */ {
 	.myButton {
-		box-shadow: 0px 18px 14px -7px #153c42;
-		background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-		background-color:#599bb3;
-		border-radius:8px;
 		display:inline-block;
 		cursor:pointer;
-		color:#ffffff;
 		font-family:Libre Baskerville, serif;
 		font-size:35px;
 		font-weight:bold;
-		padding:4em;
+		padding:3em;
 		text-decoration:none;
 		text-shadow:0px 1px 0px #3d768a;
-		max-width: 25%;
+		-webkit-border-radius: 50px;
+		border-radius: 50px;
+		background: #D1D8EC;
+		-webkit-box-shadow: 12px 12px 24px #b2b8c9, -12px -12px 24px #f0f8ff;
+		box-shadow: 12px 12px 24px #b2b8c9, -12px -12px 24px #f0f8ff;
+		/*! grid-row-start: 2; */
+		margin: 25px;
 	}
 
 	.myButton:hover {
-		background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+		background: linear-gradient(145deg, #cacaca, #f0f0f0);
 		background-color:#408c99;
 	}
 
