@@ -4,97 +4,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" charset="utf-8">
 <title></title>
 </head>
-<div id="navigatox">
-	<%- include("../partials/header.ejs"); %>
-	<div id="links">
-		<a href="/grocery" class="myButton">Grocery</a>
-		<a href="/work" class="myButton">Lunches</a>
-		<a href="/misc" class="myButton">Misc</a>
-	</div>
-</div>
 <body>
-
+	<div id="navigatox">
+		<%- include("../partials/header.ejs"); %>
+		<div id="links">
+			<a href="/grocery" class="myButton">Grocery</a>
+			<a href="/work" class="myButton">Lunches</a>
+			<a href="/misc" class="myButton">Misc</a>
+		</div>
+	</div>
 </body>
-<style>
-body {
-	background-color: #FCFCD6;
-}
-
-h2 {
-	display: grid;
-	justify-self: left;
-	align-self: left;
-}
-
-#navigatox {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 7fr;
-  grid-gap: 1rem;
-  justify-items: center;
-  align-items: center;
-}
-
-@media (min-width: 501px) /* Mobile */ {
-	.myButton {
-		box-shadow: 0px 18px 14px -7px #153c42;
-		background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-		background-color:#599bb3;
-		border-radius:8px;
-		display:inline-block;
-		cursor:pointer;
-		color:#ffffff;
-		font-family:Arial;
-		font-size:20px;
-		font-weight:bold;
-		padding:24px 43px;
-		text-decoration:none;
-		text-shadow:0px 1px 0px #3d768a;
-		max-width: 25%;
-	}
-
-	.myButton:hover {
-		background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-		background-color:#408c99;
-	}
-
-	.myButton:active {
-		position:relative;
-		top:1px;
-	}
-}
-
-@media (max-width: 500px) /* Mobile */ {
-	.myButton {
-		box-shadow: 0px 18px 14px -7px #153c42;
-		background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-		background-color:#599bb3;
-		border-radius:8px;
-		display:inline-block;
-		cursor:pointer;
-		color:#ffffff;
-		font-family:Arial;
-		font-size:14px;
-		font-weight:bold;
-		padding:16px 22px;
-		text-decoration:none;
-		text-shadow:0px 1px 0px #3d768a;
-	}
-
-	.myButton:hover {
-		background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-		background-color:#408c99;
-	}
-
-	.myButton:active {
-		position:relative;
-		top:1px;
-	}
-}
-
-<!-- refer to this for learning responsiveness -->
-<!-- https://www.sitepoint.com/media-queries-width-vs-device-width/ -->
-
-</style>
+	<style>
+		<%- include("../../public/indexStyle.css"); %>
+	</style>
 </html>
 
