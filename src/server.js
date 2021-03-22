@@ -112,14 +112,6 @@ app.get("/assets/fontawesome", (req, res) => {
   res.sendFile(__dirname + "/public/landingPage/assets/css/fontawesome-all.min.css");
 });
 
-app.get("/public/landingPage/images/pic02.jpg", (req, res) => {
-  res.sendFile(__dirname + "/public/landingPage/images/pic02.jpg");
-});
-
-app.get("/public/landingPage/images/pic02.jpg", (req, res) => {
-  res.sendFile(__dirname + "/public/landingPage/images/pic03.jpg");
-});
-
 app.get("/images/bg.jpg", (req, res) => {
   res.sendFile(__dirname + "/public/landingPage/images/bg.jpg");
 });
