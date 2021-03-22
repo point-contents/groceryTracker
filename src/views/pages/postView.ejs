@@ -5,9 +5,6 @@
 </head>
 <body id="container">
 	<%- include("../partials/header.ejs"); %>
-	<div> 
-		Logout / Home Button
-	</div>
 	<div class="inputArea">
 		<form action="/<%- formPostAction %>" method="POST">
 			<input type = "number" id="formAmountValue" name = "value" max = "<%- maxValue %>" min = "<%- minValue %>" placeholder="Amount" required autofocus/>
