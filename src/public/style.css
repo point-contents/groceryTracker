@@ -23,15 +23,18 @@ form {
 }
 
 #formAmountValue {
+    grid-column-start: 2;
     margin: 25px;
     padding 10px;
+    font-size: 25px;
+    width: 10em;
 }
 
 #myButton {
 	background: #D1D8EC;
 
-	width: 100px;
-	height: 200px;
+	width: 150px;
+	height: 150px;
 	-webkit-border-radius: 10px; 
 	border-radius: 10px; 
 	-webkit-box-shadow: 12px 12px 24px #b2b8c9,
@@ -42,9 +45,13 @@ form {
 	grid-row-start: 2;
 	grid-column-start: 2;
 
-	margin: 100px;
+	margin: 50px;
 	font-family: Libre Baskerville;
     font-weight: bolder;
     font-size: 20px;
 }
 
+.grapher {
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
