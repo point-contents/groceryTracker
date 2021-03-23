@@ -51,6 +51,12 @@ form {
     font-size: 20px;
 }
 
+#myButton:hover {
+    background: linear-gradient(145deg, #bcc2d4, #e0e7fd);
+    box-shadow:  20px 20px 60px #b2b8c9,
+                             -20px -20px 60px #f0f8ff;
+}
+
 .grapher {
     grid-column-start: 2;
     grid-row-start: 2;
