@@ -1,4 +1,4 @@
-# (Spending Tracker Utility)[trackgroceries.info]
+# trackgroceries.info
 I have recently started working, and want to keep an eye on how much I am spending for both weekly (grocery) and ad-hoc (work lunches, lollies).
 A peice of paper is pretty effective for this, but there are some drawbacks overtime. Seemed like an ideal time to make a little web-tool to track
 it and give me some summaries of it.
