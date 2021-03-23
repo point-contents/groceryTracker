@@ -9,12 +9,12 @@
 	<div class="inputArea">
 		<form action="/<%- formPostAction %>" method="POST">
 			<input type = "number" id="formAmountValue" name = "value" max = "<%- maxValue %>" min = "<%- minValue %>" placeholder="Amount" required autofocus/>
-			<button type="submit" id="myButton">Submit</button>
+			<button type="submit" id="myButton" label="submit button to post spending amount">Submit</button>
 		</form>
 	</div>
 	<div class="grapher">
 		<form action="/<%- graphPostAction %>">
-			<input type="submit" value="Graph" id="myGrapher"/>
+			<input type="submit" value="Graph" id="myGrapher" label="button to go see the spending graphically"/>
 		</form>
 	</div>
 </body>
