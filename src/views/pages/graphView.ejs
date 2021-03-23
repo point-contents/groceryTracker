@@ -6,45 +6,73 @@
 </head>
 <body class="container">
 <main>
-		<!-- views/map-access-chart.ejs -->
-		<canvas id="myChart" width="100%" height="100%"></canvas>
-		<div>
+	<div class="charter">
+		<div class="graph1">
+			<!-- views/map-access-chart.ejs -->
+			<canvas id="myChart" width="100%" height="100%"></canvas>
+			<div>
 
-		<script id ="map-popularity" type="text/javascript">
-			var ctx = document.getElementById("myChart").getContext("2d");
-			var myChart = new Chart(ctx, {
-			type: 'bar',
-			data: {
-				labels: <%- JSON.stringify(date) %>,
-				datasets: [{
-					label: '<%- graphTitle %> ',
-					data: <%- JSON.stringify(data) %>
-				}]
-			},
-			options: {
-				scales: {
-					yAxes: [{
-						ticks: {
-							beginAtZero: true
-						}
+			<script id ="map-popularity" type="text/javascript">
+				var ctx = document.getElementById("myChart").getContext("2d");
+				var myChart = new Chart(ctx, {
+				type: 'bar',
+				data: {
+					labels: <%- JSON.stringify(date) %>,
+					datasets: [{
+						label: '<%- graphTitle %> ',
+						data: <%- JSON.stringify(data) %>
 					}]
 				},
-				responsive: true,
-				maintainAspectRatio: false,
-			}
-		});
-		</script>
+				options: {
+					scales: {
+						yAxes: [{
+							ticks: {
+								beginAtZero: true
+							}
+						}]
+					},
+					responsive: true,
+					maintainAspectRatio: false,
+				}
+			});
+			</script>
+			</div>
 		</div>
+		<div class="blurb">
+			<p> This is a graph of all of the spending that we have ever captured together </p>
+			<p> Scroll down to see spending broken down by week to date, month to date and year to date. </p>
+			<a href="https://trackgroceries.info/home"> Click here to go back to index page </a>
+		</div>	
+	</div>
 </main>
 <style>
 	body {
 		background-color: #fcfcd6;
 	}
-	main {
-		padding-top: 100px;
+	.charter {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		height: 100vh;
+		width: 100vw;
 	}
-	.submit {
-		padding-top: 40px;
+	.graph1 {
+		padding: 25px;
+		margin: 25px;
+	}
+	.container {
+		height: 100vh;
+	}
+	.blurb {
+		margin: 25px;
+		padding: 25px;
+	}
+	p {
+		margin: 25px;
+		padding: 25px;
+	}
+	a {
+		margin: 25px;
+		padding: 25px;
 	}
 </style>
 </html>
