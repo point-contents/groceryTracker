@@ -62,6 +62,32 @@ form {
     grid-row-start: 2;
 }
 
+#myGrapher {
+	background: ##fce8d9;
+
+	width: 150px;
+	height: 150px;
+	-webkit-border-radius: 10px; 
+	border-radius: 10px; 
+	-webkit-box-shadow: 12px 12px 24px #b2b8c9,
+	-12px -12px 24px #f0f8ff;
+	box-shadow: 12px 12px 24px #b2b8c9,
+	-12px -12px 24px #f0f8ff;
+
+	grid-row-start: 2;
+	grid-column-start: 2;
+
+	margin: 50px;
+	font-family: Libre Baskerville;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+#myGrapher:hover {
+    background: linear-gradient(145deg, #fce8d9, #e0e7fd);
+    box-shadow:  20px 20px 60px #b2b8c9,
+                             -20px -20px 60px #f0f8ff;
+}
 .navIcon {
     margin: 25 25 0 15;
 }
