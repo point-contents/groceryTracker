@@ -20,7 +20,7 @@ router.get("/", getValidate, requiresAuth(), (req, res) => {
     //for posting to the database.
     res.render("pages/postView.ejs",
       {
-        maxValue: 200,
+        maxValue: 50,
         minValue: 0,
         formPostAction: "work",
         graphPostAction: "workGraph"
