@@ -27,9 +27,7 @@ router.get("/", getValidate, requiresAuth(), (req, res) => {
         graphPostAction: "workGraph"
       });
   } else {
-    console.log("Bad get request");
-    console.log(errors);
-    res.send("Bad request");
+         res.status(400).send({success: false});
   }
 });
 
@@ -46,14 +44,11 @@ router.post("/", postValidate, postWorkValidate, requiresAuth(), (req, res) => {
         },
       ]);
     } catch (err) {
-      console.error("Error inserting into DB");
-      console.error(err);
+          res.status(400).send({success: false});
     }
     res.redirect("/work");
   } else {
-    console.log("Failed Validator");
-    console.error(errors);
-    res.send("Bad Request");
+         res.status(400).send({success: false});
   }
 });
 

@@ -1,4 +1,4 @@
-//DATABASE  - PUT in Models folder and use an ENV file
+//DATABASE  
 var mongoose = require('mongoose');
 
 //Set up default mongoose connection

@@ -29,8 +29,7 @@ router.get("/", getValidate, requiresAuth(), (req, res) => {
         graphPostAction: "miscGraph"
       });
   } else {
-    res.send("Bad request");
-    console.error(errors);
+         res.status(400).send({success: false});
   }
 });
 
@@ -51,16 +50,12 @@ router.post("/", postValidate, postMiscValidate, requiresAuth(), (req, res) => {
         },
       ]);
     } catch (err) {
-      console.log("Error inserting into DB");
-      console.error(err);
+         res.status(400).send({success: false});
+         console.error(err);
     }
     res.redirect("/misc");
   } else {
-    console.log("Failed Validator");
-    console.log(req.body);
-    console.log(errors);
-    //TODO replace this with a 404 type page
-    res.send("Bad Request");
+    res.status(400).send({success: false});
   }
 });
 

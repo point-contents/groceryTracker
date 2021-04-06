@@ -31,7 +31,7 @@ router.get("/", getValidate, requiresAuth(), (req, res) => {
         graphPostAction: "groceryGraph"
       });
   } else {
-    res.send("Bad request");
+    res.status(400).send({success: false});
     console.error(errors);
   }
 });
@@ -40,7 +40,6 @@ router.post("/", postValidate, postGroceryValidate, requiresAuth(), (req, res) =
   const errors = validationResult(req);
   const sub = req.oidc.user.sub;
   if (errors.isEmpty()) {
-    console.log(req.body);
     try {
       groceryModel.insertMany([
         {
@@ -50,16 +49,11 @@ router.post("/", postValidate, postGroceryValidate, requiresAuth(), (req, res) =
         },
       ]);
     } catch (err) {
-      console.log("Error inserting into DB");
-      console.err(err);
+      res.status(400).send({success: false});
     }
     res.redirect("/grocery");
   } else {
-    console.log("Failed Validator");
-    console.log(req.body);
-    console.error(errors);
-    //TODO replace this with a 404 type page
-    res.send("Bad Request");
+     res.status(400).send({success: false});
   }
 });
 
