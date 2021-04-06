@@ -7,6 +7,7 @@ const path = require("path");
 const { check, body, validationResult } = require("express-validator");
 var getValidate = require("../../utils/getValidate");
 var postValidate = require("../../utils/postValidate");
+var postGroceryValidate = require("../../utils/postValidate");
 var groceryModel = require("../../model/groceryTransactionModel");
 
 //auth0 middleware
@@ -35,7 +36,7 @@ router.get("/", getValidate, requiresAuth(), (req, res) => {
   }
 });
 
-router.post("/", postValidate, requiresAuth(), (req, res) => {
+router.post("/", postValidate, postGroceryValidate, requiresAuth(), (req, res) => {
   const errors = validationResult(req);
   const sub = req.oidc.user.sub;
   if (errors.isEmpty()) {

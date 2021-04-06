@@ -6,6 +6,7 @@ const { check, body, validationResult } = require("express-validator");
 const { auth, requiresAuth } = require("express-openid-connect");
 
 var postValidate = require("../../utils/postValidate");
+var postMiscValidate = require("../../utils/postValidate");
 var getValidate = require("../../utils/getValidate");
 var miscTransaction = require("../../model/miscTransactionModel");
 
@@ -33,7 +34,7 @@ router.get("/", getValidate, requiresAuth(), (req, res) => {
   }
 });
 
-router.post("/", postValidate, requiresAuth(), (req, res) => {
+router.post("/", postValidate, postMiscValidate, requiresAuth(), (req, res) => {
   console.log("Post attempt made");
   const errors = validationResult(req);
   //TODO find the best way to this, for example, does it

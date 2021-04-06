@@ -9,6 +9,7 @@ const { auth, requiresAuth } = require("express-openid-connect");
 
 var getValidate = require("../../utils/getValidate");
 var postValidate = require("../../utils/postValidate");
+var postWorkValidate = require("../../utils/postValidate");
 var workTransaction = require("../../model/workTransactionModel");
 
 //ROUTES
@@ -32,7 +33,7 @@ router.get("/", getValidate, requiresAuth(), (req, res) => {
   }
 });
 
-router.post("/", postValidate, requiresAuth(), (req, res) => {
+router.post("/", postValidate, postWorkValidate, requiresAuth(), (req, res) => {
   const errors = validationResult(req);
   if (errors.isEmpty()) {
     const sub = req.oidc.user.sub;
