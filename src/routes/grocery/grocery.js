@@ -3,11 +3,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
-//does this need to be here??
 const { check, body, validationResult } = require("express-validator");
 var getValidate = require("../../utils/getValidate");
 var postValidate = require("../../utils/postValidate");
 var postGroceryValidate = require("../../utils/postValidate");
+
+// database
 var groceryModel = require("../../model/groceryTransactionModel");
 
 //auth0 middleware

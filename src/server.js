@@ -45,7 +45,7 @@ const limiter = rateLimit({
   max: 30,
 });
 app.use(limiter);
-app.set("trust proxy", 1);
+app.set("trust proxy", true);
 
 //Auth config provided by Auth0, config imported from its
 //own file
@@ -62,12 +62,15 @@ app.use(morgan('combined'));
 //unathenticated route
 //to home, entry point
 app.get("/", (req, res) => {
-    res.render("pages/landingPage.ejs");
+    res.render("pages/landingPage.ejs",
+      {
+        landingPageRedirectToHomepage: process.env.LANDINGPAGEREDIRECTTOHOMEPAGE
+      });
 });
 
 var home = require("./routes/home");
 var grocery = require("./routes/grocery/grocery");
-var work = require("./routes/work/workTransaction");
+var work = require("./routes/work/work");
 var misc = require("./routes/misc/misc");
 
 //routes with chart.js
@@ -83,9 +86,6 @@ app.use("/misc", misc);
 app.use("/groceryGraph", groceryGraph);
 app.use("/workGraph", workGraph);
 app.use("/miscGraph", miscGraph);
-
-//TODO FIX, this is just here to get the auth working,
-//obviously they will need to go later.
 
 //auth0 callback url
 app.get("/callback", (req, res) => {
