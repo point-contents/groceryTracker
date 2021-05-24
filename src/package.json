@@ -10,7 +10,7 @@
   "author": "me",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "dotenv": "^9.0.2",
+    "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-openid-connect": "^2.3.1",
