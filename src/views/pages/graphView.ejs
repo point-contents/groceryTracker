@@ -6,44 +6,35 @@
 </head>
 <body class="container">
 <main>
-	<div class="charter">
-		<div class="graph1">
-			<!-- views/map-access-chart.ejs -->
-			<canvas id="myChart" width="300" height="300"></canvas>
-			<div>
+<div class="charter">
+	<!-- views/map-access-chart.ejs -->
+	<canvas id="myChart" width="300" height="300"></canvas>
 
-			<script id ="map-popularity" type="text/javascript">
-				var ctx = document.getElementById("myChart").getContext("2d");
-				var myChart = new Chart(ctx, {
-				type: 'bar',
-				data: {
-					labels: <%- JSON.stringify(date) %>,
-					datasets: [{
-						label: '<%- graphTitle %> ',
-						data: <%- JSON.stringify(data) %>
-					}]
-				},
-				options: {
-					scales: {
-						yAxes: [{
-							ticks: {
-								beginAtZero: true
-							}
-						}]
-					},
-					responsive: true,
-					maintainAspectRatio: false,
-				}
-			});
-			</script>
-			</div>
-		</div>
-		<div class="blurb">
-			<p> This is a graph of all of the spending that we have ever captured together </p>
-			<p> Scroll down to see spending broken down by week to date, month to date and year to date. </p>
-			<a href="https://trackgroceries.info/home"> Click here to go back to index page </a>
-		</div>	
-	</div>
+	<script id ="map-popularity" type="text/javascript">
+		var ctx = document.getElementById("myChart").getContext("2d");
+		var myChart = new Chart(ctx, {
+		type: 'bar',
+		data: {
+			labels: <%- JSON.stringify(date) %>,
+			datasets: [{
+				label: '<%- graphTitle %> ',
+				data: <%- JSON.stringify(data) %>
+			}]
+		},
+		options: {
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero: true
+					}
+				}]
+			},
+			responsive: true,
+			maintainAspectRatio: false,
+		}
+	});
+	</script>
+</div>
 </main>
 <style>
 	body {
@@ -55,31 +46,8 @@
 		height: 100vh;
 		width: 100vw;
 	}
-	.graph1 {
-		padding: 25px;
-		margin: 25px;
-		height: 50vh;
-		width: 50vh;
-		border-radius: 50px;
-		background: linear-gradient(145deg, #e0e7fd, #bcc2d4);
-		box-shadow:  20px 20px 60px #7d828e,
-					 -20px -20px 60px #ffffff;
-
-	}
 	.container {
 		height: 100vh;
-	}
-	.blurb {
-		margin: 25px;
-		padding: 25px;
-	}
-	p {
-		margin: 25px;
-		padding: 25px;
-	}
-	a {
-		margin: 25px;
-		padding: 25px;
 	}
 </style>
 </html>
